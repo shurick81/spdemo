@@ -35,7 +35,7 @@ In order to install this plugin, run `vagrant plugin install vagrant-azure`
 * ARM_SUBSCRIPTION_ID
 * ARM_TENANT_ID
 
-Use this instruction as a baseline: https://www.packer.io/docs/builders/azure-setup.html
+Use https://www.packer.io/docs/builders/azure-setup.html or https://github.com/Azure/vagrant-azure as a baseline.
 
 ## Usage
 
@@ -43,9 +43,13 @@ Use this instruction as a baseline: https://www.packer.io/docs/builders/azure-se
 
 `git clone https://github.com/shurick81/spdemo c:\projects\spdemo`
 
-2. Open `spdemo` directory in command line
-3. Run `vagrant up`
-4. Connect to sp2019demo machine via following credential:
+2. Open `basic` directory inside `spdemo` in command line or PowerShell console
+3. Run
+```
+vagrant box add azure https://github.com/azure/vagrant-azure/raw/v2.0/dummy.box --provider azure
+vagrant up --provider azure
+```
+4. Connect to addbweb19code01 machine with following credential:
 
 | User name | Password |
 | --------- | ---------- |
