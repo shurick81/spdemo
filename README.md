@@ -29,7 +29,7 @@ In order to install this plugin, run `vagrant plugin install vagrant-azure`
 #### Environmental variables
 
 1. Create application and assign proper roles for managing Azure resources
-2. Set values for following variables:
+2. Set values for following environment variables:
 * ARM_CLIENT_ID
 * ARM_CLIENT_SECRET
 * ARM_SUBSCRIPTION_ID
@@ -39,12 +39,14 @@ Use this instruction as a baseline: https://www.packer.io/docs/builders/azure-se
 
 ## Usage
 
-1. Clone the project to local directory
+1. Clone the project to local directory via running following command:
 
 `git clone https://github.com/shurick81/spdemo c:\projects\spdemo`
 
 2. Open `spdemo` directory in command line
 3. Run `vagrant up`
 4. Connect to sp2019demo machine via following credential:
-| User name | vagrant |
-| Password | Fractalsol365 |
+
+| User name | Password |
+| --------- | ---------- |
+| vagrant | Fractalsol365 |
