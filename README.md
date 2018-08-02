@@ -1,12 +1,10 @@
 # Project for no brain SP 2019 sandbox installation
 
+Tested on Windows but you can use it across any platform that is supported by Vagrant.
+
 ## Prerequisites
 
-You will need following components installed:
-* git
-* Vagrant
-
-If you miss any of these components, you can use the following Windows PowerShell snippet to fill the gap:
+First of all, you will need git and Vagrant installed. If you miss any of these components, you can use the following Windows PowerShell snippet to fill the gap:
 
 ```PowerShell
 Set-ExecutionPolicy Bypass -Force;
@@ -17,15 +15,14 @@ choco install -y vagrant
 
 If one of installed components was Vagrant, you now need to reboot your machine.
 
-Additional component that you need to install after that is 
-vagrant `vagrant plugin install vagrant-reload`.
+Beside these two main components, you also want to install 
+Vagrant Reload Provisioner plugin. Run following command to do that: `vagrant plugin install vagrant-reload`.
 
 ### Azure prerequisites
 
 The only virtualization provider currenlty supported by this project is Azure, so before using this tool, please install necessary components and set variables.
 
-
-#### Vagrant Reload Provisioner
+#### Vagrant Azure Provider
 
 In order to install this plugin, run `vagrant plugin install vagrant-azure`
 
@@ -48,4 +45,6 @@ Use this instruction as a baseline: https://www.packer.io/docs/builders/azure-se
 
 2. Open `spdemo` directory in command line
 3. Run `vagrant up`
-4. Connect to sp2019demo machine via `vagrant` `Fractalsol365` user and password.
+4. Connect to sp2019demo machine via following credential:
+| User name | vagrant |
+| Password | Fractalsol365 |
