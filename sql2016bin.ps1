@@ -89,7 +89,19 @@ catch
 Write-Host "$(Get-Date) Starting DSC"
 try
 {
-    Start-DscConfiguration $configName -Verbose -Wait -Force;
+    Start-DscConfiguration $configName -Verbose -Force;
+    Sleep 20;
+    0..360 | % {
+        $res = Get-DscLocalConfigurationManager;
+        Write-Host $res.LCMState;
+        if ( ( $res.LCMState -ne "Idle" ) -and ( $res.LCMState -ne "PendingConfiguration" ) ) {
+            Sleep 10;
+        }
+    }
+    if ( ( $res.LCMState -ne "Idle" ) -and ( $res.LCMState -ne "PendingConfiguration" ) ) {
+        Write-Host "Timouted waiting for LCMState"
+        Exit 1;
+    }
 }
 catch
 {
